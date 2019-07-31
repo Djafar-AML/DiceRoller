@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val playerFirstName = PlayerFirstName("Cefer")
+    private val playerFirstName = PlayerFirstName()
 
     private var displayName: Boolean = true
 
@@ -21,11 +21,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.playerName = playerFirstName
 
         binding.apply {
 
             rollBtn.text = "Let's Roll"
+
+            playerName = playerFirstName
 
             rollBtn.setOnClickListener {
                 if (displayName) {
@@ -41,7 +42,12 @@ class MainActivity : AppCompatActivity() {
     private fun showName() {
 
         binding.apply {
-            playerName?.name = playerNameEditText.text.toString()
+
+            // we can take one of these approaches!
+//            playerName?.name = playerNameEditText.text.toString()
+            playerFirstName.name = playerNameEditText.text.toString()
+
+            // in order to refresh the UI with new data -> so that get recreated with new data!!!
 
             invalidateAll()
 
@@ -57,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val drawableResource = when (Random.nextInt(6) + 1) {
+
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
