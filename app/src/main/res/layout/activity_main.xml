@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:layout_gravity="center_vertical"
-              tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
 
-    <ImageView
-            android:contentDescription="@string/rollimagedescription"
-            android:id="@+id/dice_iv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:src="@drawable/dice_1"
-            app:srcCompat="@drawable/empty_dice"
-            android:layout_gravity="center_horizontal"/>
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            tools:context=".MainActivity">
 
-    <Button android:id="@+id/roll_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/roll"
-            android:layout_gravity="center_horizontal"/>
+        <ImageView
+                android:contentDescription="@string/rollimagedescription"
+                android:id="@+id/dice_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/dice_1"
+                app:srcCompat="@drawable/empty_dice"
+                android:layout_gravity="center_horizontal"/>
 
-</LinearLayout>
+        <Button android:id="@+id/roll_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roll"
+                android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</layout>
